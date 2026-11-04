@@ -4,12 +4,12 @@ import { GetEspecialidades } from "../controllers/EspecialidadController.js";
 import { ObtenerInfomacionMedico, ObtenerMedicosEspecialidad } from "../controllers/MedicosController.js";
 import { ObtenerHorariosMedico, ObtenerHorariosPorFechaMedico } from "../controllers/HorariosMedicoController.js";
 import { ActualizarHorario, CrearHorarioMedico, GetHorario, GetHorarioId, GetHorarios} from "../controllers/HorarioController.js";
-
+import { validarCita } from "../controllers/ValidarCitaMiddelware.js";
 const router=Router();
 
 
 router.get("/Citas",GetCitas)
-router.post("/Citas",CrearCita)
+router.post("/Citas",validarCita,CrearCita)
 router.get("/Citas/:id",ObtenerCita)
 router.delete("/Citas/:id",EliminarEmpleado)
 router.get("/Especialidades",GetEspecialidades)
