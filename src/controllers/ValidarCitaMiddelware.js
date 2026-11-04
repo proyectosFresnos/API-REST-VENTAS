@@ -13,7 +13,7 @@ export const validarCita = async (req, res, next) => {
   if (rows.length >0) {
     return res.status(400).json({ // Cambiado a 400 (Petición incorrecta)
         id:0,
-        message: "Usted ya tiene una cita agendada para esta fecha/hora."
+        message: "Usted ya tiene una cita programada para esta fecha"
     })
   
 }
